@@ -1,0 +1,31 @@
+ body {
+  /*background-color: red;*/
+ }
+ h1 {
+  text-align: center;
+ }
+.board {
+  border: solid black 2px;
+  height: 540px;
+  width: 540px;
+  margin: 0 auto;
+}
+.box {
+  border:solid black 2px;
+  height: 60px;
+  width: 60px;
+}
+.score {
+  border: solid black 2px;
+  height: 250px;
+  width: 150px;
+  float: right;
+  position: relative;
+    right: 5%;
+    bottom: 400px;
+}
+button {
+  position: relative;
+    left: 45%;
+  margin: 10px;
+}
