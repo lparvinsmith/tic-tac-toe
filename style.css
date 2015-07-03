@@ -12,9 +12,17 @@
 }
 .box {
   border:solid black 2px;
-  height: 60px;
-  width: 60px;
+  height: 176px;
+  width: 176px;
+  float: left;
 }
+#box4 {
+  clear: left;
+}
+#box7 {
+  clear: left;
+}
+
 .score {
   border: solid black 2px;
   height: 250px;
@@ -29,3 +37,6 @@ button {
     left: 45%;
   margin: 10px;
 }
+
+
+/* float left, clear 3, clear 6
