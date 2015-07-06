@@ -1,0 +1,5 @@
+As a player, I want a straight-forward interface so I can enjoy a logical game.
+
+As a player, I want a scoreboard to keep track of how many wins I have compared to those of my opponent.
+
+As a player, I want to be able to reset the scoreboard if I take on a new opponent.

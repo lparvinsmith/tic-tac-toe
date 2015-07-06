@@ -82,3 +82,7 @@ var clearBoard = function() {
 //woo it works!
 // clearBoard();
 // console.log(board);
+
+//module.export {
+
+}
