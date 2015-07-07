@@ -1,9 +1,9 @@
 'use strict;'
 
 
-var board = { square1: 'X', square2: 'O', square3: "O",
-              square4: 'O', square5: 'X', square6: 'X',
-              square7: 'X', square8: "O", square9: 'X'};
+var board = { square1: null, square2: null, square3: null,
+              square4: null, square5: null, square6: null,
+              square7: null, square8: null, square9: null};
 
 //FIX THIS alternate which player begins, starting with playerX
 var selectFirstPlayer = function() {
@@ -83,6 +83,10 @@ var clearBoard = function() {
 // clearBoard();
 // console.log(board);
 
-//module.export {
+// module.export {
+//   playerXScore;
+//   playerOScore;
+//   clearBoard;
+// }
 
-}
+

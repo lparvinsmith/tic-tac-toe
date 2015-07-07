@@ -38,5 +38,10 @@ button {
   margin: 10px;
 }
 
+.reset {
+  position: relative;
+  top: 30px;
+}
+
 
 
