@@ -1,8 +1,8 @@
 'use strict';
 
-var board = ["x", "o", "x",
-             "x", "o", "o",
-             "o", "o", "x",];
+var board = ["", "", "",
+             "", "", "",
+             "", "", "",];
 
 var threeInARow = function(player) {
   var winner;
@@ -59,15 +59,39 @@ var threeInARow = function(player) {
            board[8]) {
     winner = 'draw';
   }
-  console.log('the winner is player ' + winner);
   return winner;
 }
 
-threeInARow('o');
+// threeInARow('o');
 
+//stores outcome in scoreboard
+var playerXScore = 0;
+var playerOScore = 0;
+var draw = 0;
+var keepScore = function(winner) {
+  if (winner === 'X') {
+    playerXScore++;
+  }
+  else if (winner === 'O') {
+    playerOScore++;
+  }
+  else {
+    draw++;
+  }
+}
+//need to push these values to page
+
+// takeTurn should run each time a player clicks a box
 var takeTurn = function(player) {
-  //use ui.js to listen for click from player --HOW
-  //check if there are threeInARow
+  //check if there are threeInARow (to determine whether game is over)
+  //if the game is over, plug winner into keepScore
+  if (threeInARow(player)) {
+    keepScore(winner);
+    console.log('YOU WIN!');
+  }
+  else {
+
+  }
 }
 
 //need separate function for determining player order/switching?
@@ -90,21 +114,7 @@ var selectFirstPlayer = function() {
 
 // selectFirstPlayer();
 
-//stores outcome in scoreboard
-var keepScore = function() {
-  var playerXScore = 0;
-  var playerOScore = 0;
-  var draw = 0;
-  if (winner === 'X') {
-    playerXScore++;
-  }
-  else if (winner === 'O') {
-    playerOScore++;
-  }
-  else {
-    draw++;
-  }
-}
+
 
 //if button 'play again' is pressed, clears board
 var clearBoard = function() {
@@ -112,9 +122,6 @@ var clearBoard = function() {
     board[i] = "";
   }
 }
-
-// clearBoard();
-// console.log(board);
 
 // module.export {
 //   playerXScore;
