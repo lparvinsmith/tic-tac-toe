@@ -7,12 +7,11 @@
 //if div1 is clicked by playerO, square1 takes value 'O'
 //once div1 is clicked and its value set, it cannot change value until clearBoard()
 
-var player = 'X';
+var player = 'O';
 
 $(".box").click(function() {
   $(this).text(player);
   return player;
-
 })
 
 //store outcome in scoreboard
@@ -21,19 +20,18 @@ $(".box").click(function() {
   // $("#oWins").html(playerOScore);
   // $("#draws").html(draw);
 
-//play again button
+//play again button --works but needs to toggle first player
 $(".play-again").click(function() {
-  clearBoard();
-  selectFirstPlayer();
-  $(".box").forEach("")
+  $(".box").text("");
+ //run selectFirstPlayer and use result to change h3
 })
-//need to ensure these are properly linked
 
-//reset button
+
+//reset button --works.
 $(".reset").click(function() {
-  $("#xWins").html(0);
-  $("#oWins").html(0);
-  $("#draws").html(0);
+  $("#xWins").text(0);
+  $("#oWins").text(0);
+  $("#draws").text(0);
 })
 
 /////////////////////////////////////////////

@@ -29,6 +29,7 @@
 }
 
 .score {
+  text-align: center;
   border: solid black 2px;
   height: 250px;
   width: 150px;
@@ -37,7 +38,7 @@
     right: 5%;
     bottom: 400px;
 }
-button {
+.play-again {
   position: relative;
     left: 45%;
   margin: 10px;
@@ -45,7 +46,7 @@ button {
 
 .reset {
   position: relative;
-  top: 30px;
+  top: 40px;
 }
 
 
