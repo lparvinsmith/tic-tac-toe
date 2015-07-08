@@ -47,7 +47,11 @@ var threeInARow = function(player) {
            board[8] === player) {
     winner = player;
   }
-//if all values in board are truthy, winner = 'draw';
+  return winner;
+}
+
+var isThereADraw = function(){
+  //if all values in board are truthy, winner = 'draw';
   else if (board[0] &&
            board[1] &&
            board[2] &&
@@ -61,8 +65,6 @@ var threeInARow = function(player) {
   }
   return winner;
 }
-
-// threeInARow('o');
 
 //stores outcome in scoreboard
 var playerXScore = 0;
@@ -89,14 +91,22 @@ var takeTurn = function(player) {
     keepScore(winner);
     console.log('YOU WIN!');
   }
+  else if (isThereADraw()) {
+    console.log('TIE GAME!');
+  }
   else {
-
+    switchPlayer()
   }
 }
 
 //need separate function for determining player order/switching?
-var switchTurns = function(player) {
-
+var switchPlayer = function() {
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O';
+  }
+  else {
+    currentPlayer = 'X';
+  }
 }
 
 //FIX THIS alternate which player begins, starting with playerX
@@ -113,8 +123,6 @@ var selectFirstPlayer = function() {
 }
 
 // selectFirstPlayer();
-
-
 
 //if button 'play again' is pressed, clears board
 var clearBoard = function() {
