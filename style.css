@@ -4,11 +4,16 @@
  h1 {
   text-align: center;
  }
+ h3 {
+  text-align: center;
+ }
 .board {
   border: solid black 2px;
   height: 540px;
   width: 540px;
   margin: 0 auto;
+  text-align: center;
+  font-size: 150px;
 }
 .box {
   border:solid black 2px;

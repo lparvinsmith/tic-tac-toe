@@ -1,18 +1,19 @@
 //BASIC FUNCTIONALITY
+'use strict';
+//(document).ready(function(){}) include Ajax later
+
 //when player clicks square, corresponding key in object board is given value X or O
 //if div1 is clicked by playerX, square1 takes value 'X'
 //if div1 is clicked by playerO, square1 takes value 'O'
 //once div1 is clicked and its value set, it cannot change value until clearBoard()
 
-$("#box1").click(function(player) {
-  $("#box1").html(player);
-  alert("hi");
-})
+var player = 'X';
 
-// $(".box").click(function(player) {
-//   $(".box").html("<p>" + player + "</p>");
-//   alert(player);
-// })
+$(".box").click(function() {
+  $(this).text(player);
+  return player;
+
+})
 
 //store outcome in scoreboard
 //need to activate for when keepScore() increases score of player?
