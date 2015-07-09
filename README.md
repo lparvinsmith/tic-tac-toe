@@ -2,16 +2,24 @@
 first WDI project
 
 
-Techonologies Used:
+TECHNOLOGIES USED:
+JavaScript for game logic
+JQuery for user interaction
+HTML/CSS for layout and style
+
+APPROACH:
 
 
-Approach:
+UNSOLVED PROBLEMS?
+need to make sure game stops after someone wins
+make sure first player switches
+use with browserify
+bootstrap
+store on server so others can play
 
-
-Unsolved Problems?
-
-
-Easter Eggs:
+Fun stuff:
+still need to add colors
+things that happen when player wins 2, 3, 5
 
 
 LINKS TO:
@@ -19,3 +27,4 @@ LINKS TO:
 Wireframe:
 
 User story:
+user-stories.txt

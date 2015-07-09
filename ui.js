@@ -3,7 +3,13 @@
 
 $(document).ready(function(){
 
+//sets header three to tell players whose turn it is to go first
+  var tellFirstPlayer = function(){
+    $("h3").text("Player " + currentPlayer + " goes first.");
+  }
+
   selectFirstPlayer();
+  tellFirstPlayer();
 
   //store outcome in scoreboard
   var recordScore = function(){
@@ -15,17 +21,14 @@ $(document).ready(function(){
   //when player clicks square, corresponding key in object board is given value X or O
   //once square is clicked and its value set, it cannot change value until clearBoard()
   var takeTurn = function() {
-      // $(".box").click(function() {
-    //if this box's text is not truthy
+    //if this box's text is not truthy and someone hasn't won
     if (!$(this).text()) {
       //this box's text becomes player
       $(this).text(currentPlayer);
       //the corresponding array's text becomes player
       var boxId = Number($(this).attr('id'));
       board[boxId] = currentPlayer;
-      // return player;
     }
-      // })
     //check if there are threeInARow or draw
     //if the game is over, plug winner into keepScore
     var winner = threeInARow(currentPlayer);
@@ -33,11 +36,13 @@ $(document).ready(function(){
       keepScore(winner);
       recordScore();
       console.log('YOU WIN!');
+      $("h3").text("PLAYER " + winner + " WINS!");
       return winner;
     } else if (isThereADraw()) {
       keepScore(winner);
       recordScore();
       console.log('DRAW!');
+      $("h3").text("DRAW!");
       return winner;
     } else {
       // debugger;
@@ -45,6 +50,7 @@ $(document).ready(function(){
     }
   }
 
+  //when box is clicked, run function takeTurn if there isn't already a winner
   $(".box").click(takeTurn);
 
   //play again button
@@ -56,6 +62,7 @@ $(document).ready(function(){
     clearBoard();
     //toggles first player
     selectFirstPlayer();
+    tellFirstPlayer();
   })
 
   //reset button

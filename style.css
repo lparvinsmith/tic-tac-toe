@@ -39,6 +39,7 @@
 .reset {
   position: relative;
   top: 40px;
+  clear: both;
 }
 
 

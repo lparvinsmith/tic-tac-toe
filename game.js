@@ -82,19 +82,6 @@ var keepScore = function(winner) {
     draw++;
   }
 }
-//need to push these values to page
-
-var currentPlayer = "X";
-var switchPlayer = function() {
-  if (currentPlayer === 'X') {
-    currentPlayer = 'O';
-  }
-  else {
-    currentPlayer = 'X';
-  }
-  console.log('currentPlayer is ' + currentPlayer);
-  return currentPlayer;
-}
 
 //alternate which player begins, starting with 'X'
 var firstPlayer;
@@ -107,6 +94,18 @@ var selectFirstPlayer = function() {
   }
   console.log(firstPlayer + ' begins');
   return firstPlayer;
+}
+
+var currentPlayer = selectFirstPlayer();
+var switchPlayer = function() {
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O';
+  }
+  else {
+    currentPlayer = 'X';
+  }
+  console.log('currentPlayer is ' + currentPlayer);
+  return currentPlayer;
 }
 
 //if button 'play again' is pressed, clears board
