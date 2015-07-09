@@ -1,5 +1,17 @@
  body {
-  /*background-color: red;*/
+  padding-top: 70px;
+  background-color: rgba(255, 250, 213, 1);
+ }
+ nav {
+  background-color: rgba(189, 73, 50, 0.5);
+ }
+ .left {
+  background-color: rgba(16, 91, 99, 1);
+  height: 100%;
+ }
+ .right {
+  background-color: rgba(219, 158, 54, 1);
+  height: 100%;
  }
  h1 {
   text-align: center;
@@ -14,6 +26,7 @@
   margin: 0 auto;
   text-align: center;
   font-size: 150px;
+  background-color: rgba(255, 211, 78, 1);
 }
 .box {
   border:solid black 2px;
@@ -23,13 +36,13 @@
 }
 .score {
   text-align: center;
-  border: solid black 2px;
+ /* border: solid black 2px;
   height: 250px;
   width: 150px;
   float: right;
   position: relative;
     right: 5%;
-    bottom: 400px;
+    bottom: 400px;*/
 }
 .play-again {
   position: relative;
