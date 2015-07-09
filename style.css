@@ -21,13 +21,6 @@
   width: 176px;
   float: left;
 }
-/*#box3 {
-  clear: left;
-}
-#box6 {
-  clear: left;
-}*/
-
 .score {
   text-align: center;
   border: solid black 2px;
@@ -43,7 +36,6 @@
     left: 45%;
   margin: 10px;
 }
-
 .reset {
   position: relative;
   top: 40px;

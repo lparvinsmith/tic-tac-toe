@@ -5,6 +5,8 @@ var player = 'O';
 
 $(document).ready(function(){
 
+  selectFirstPlayer();
+
   //when player clicks square, corresponding key in object board is given value X or O
   //once square is clicked and its value set, it cannot change value until clearBoard()
   // var makeMove = function() {
@@ -20,14 +22,6 @@ $(document).ready(function(){
       }
     })
 
-
-  //when player clicks .box0, board[0] is updated as player
-  // var updateBoard = function(player){
-  //   if ( $("#box0").click(function() {
-  //     board[0] = player;
-  //   }))
-  // }
-
   //store outcome in scoreboard
   //need to activate for when keepScore() increases score of player?
   $("#xWins").text(playerXScore);
@@ -37,7 +31,8 @@ $(document).ready(function(){
   //play again button --works but needs to toggle first player
   $(".play-again").click(function() {
     $(".box").text("");
-   //run selectFirstPlayer and use result to change h3
+    clearBoard();
+    selectFirstPlayer();
   })
 
 

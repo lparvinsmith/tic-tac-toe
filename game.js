@@ -52,7 +52,7 @@ var threeInARow = function(player) {
 
 var isThereADraw = function(){
   //if all values in board are truthy, winner = 'draw';
-  else if (board[0] &&
+  if (board[0] &&
            board[1] &&
            board[2] &&
            board[3] &&
@@ -83,24 +83,8 @@ var keepScore = function(winner) {
 }
 //need to push these values to page
 
-// takeTurn should run each time a player clicks a box
-var takeTurn = function(player) {
-  //check if there are threeInARow (to determine whether game is over)
-  //if the game is over, plug winner into keepScore
-  if (threeInARow(player)) {
-    keepScore(winner);
-    console.log('YOU WIN!');
-  }
-  else if (isThereADraw()) {
-    console.log('TIE GAME!');
-  }
-  else {
-    switchPlayer()
-  }
-}
-
-//need separate function for determining player order/switching?
 var switchPlayer = function() {
+  var currentPlayer;
   if (currentPlayer === 'X') {
     currentPlayer = 'O';
   }
@@ -109,14 +93,31 @@ var switchPlayer = function() {
   }
 }
 
-//FIX THIS alternate which player begins, starting with playerX
-var selectFirstPlayer = function() {
-  var firstPlayer;
-  if (firstPlayer !== playerX || firstPlayer === undefined) {
-    firstPlayer = playerX;
+// takeTurn should run each time a player clicks a box
+var takeTurn = function(player) {
+  //check if there are threeInARow
+  //if the game is over, plug winner into keepScore
+  if (threeInARow(player)) {
+    keepScore(winner);
+    console.log('YOU WIN!');
+  }
+  else if (isThereADraw()) {
+    keepScore(winner);
+    console.log('TIE GAME!');
   }
   else {
-    firstPlayer = playerO;
+    switchPlayer();
+  }
+}
+
+//alternate which player begins, starting with 'X'
+var firstPlayer;
+var selectFirstPlayer = function() {
+  if (firstPlayer === 'X') {
+    firstPlayer = 'O';
+  }
+  else {
+    firstPlayer = 'X';
   }
   console.log(firstPlayer + ' begins');
   return firstPlayer;
@@ -131,10 +132,5 @@ var clearBoard = function() {
   }
 }
 
-// module.export {
-//   playerXScore;
-//   playerOScore;
-//   clearBoard;
-// }
 
 
