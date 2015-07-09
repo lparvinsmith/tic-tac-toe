@@ -1,50 +1,70 @@
 //BASIC FUNCTIONALITY
 'use strict';
 
-var player = 'O';
-
 $(document).ready(function(){
 
   selectFirstPlayer();
 
+  //store outcome in scoreboard
+  var recordScore = function(){
+    $("#xWins").text(playerXScore);
+    $("#oWins").text(playerOScore);
+    $("#draws").text(draw);
+  }
+
   //when player clicks square, corresponding key in object board is given value X or O
   //once square is clicked and its value set, it cannot change value until clearBoard()
-  // var makeMove = function() {
-    $(".box").click(function() {
-      //if this box's text is not truthy
-      if (!$(this).text()) {
-        //this box's text becomes player
-        $(this).text(player);
-        //the corresponding array's text becomes player
-        var boxId = $(this).attr('id');
-        board[boxId] = player;
-        return player;
-      }
-    })
+  var takeTurn = function() {
+      // $(".box").click(function() {
+    //if this box's text is not truthy
+    if (!$(this).text()) {
+      //this box's text becomes player
+      $(this).text(currentPlayer);
+      //the corresponding array's text becomes player
+      var boxId = Number($(this).attr('id'));
+      board[boxId] = currentPlayer;
+      // return player;
+    }
+      // })
+    //check if there are threeInARow or draw
+    //if the game is over, plug winner into keepScore
+    var winner = threeInARow(currentPlayer);
+    if (winner) {
+      keepScore(winner);
+      recordScore();
+      console.log('YOU WIN!');
+      return winner;
+    } else if (isThereADraw()) {
+      keepScore(winner);
+      recordScore();
+      console.log('DRAW!');
+      return winner;
+    } else {
+      // debugger;
+      switchPlayer();
+    }
+  }
 
-  //store outcome in scoreboard
-  //need to activate for when keepScore() increases score of player?
-  $("#xWins").text(playerXScore);
-  $("#oWins").text(playerOScore);
-  $("#draws").text(draw);
+  $(".box").click(takeTurn);
 
-  //play again button --works but needs to toggle first player
+  //play again button
+  //WORKS
   $(".play-again").click(function() {
+    //clears board on browser
     $(".box").text("");
+    //clears board array
     clearBoard();
+    //toggles first player
     selectFirstPlayer();
   })
 
-
-  //reset button --works.
+  //reset button
   $(".reset").click(function() {
     $("#xWins").text(0);
     $("#oWins").text(0);
     $("#draws").text(0);
   })
 });
-
-
 
 /////////////////////////////////////////////
 //FUN STUFF

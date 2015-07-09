@@ -51,6 +51,7 @@ var threeInARow = function(player) {
 }
 
 var isThereADraw = function(){
+  var winner;
   //if all values in board are truthy, winner = 'draw';
   if (board[0] &&
            board[1] &&
@@ -83,31 +84,16 @@ var keepScore = function(winner) {
 }
 //need to push these values to page
 
+var currentPlayer = "X";
 var switchPlayer = function() {
-  var currentPlayer;
   if (currentPlayer === 'X') {
     currentPlayer = 'O';
   }
   else {
     currentPlayer = 'X';
   }
-}
-
-// takeTurn should run each time a player clicks a box
-var takeTurn = function(player) {
-  //check if there are threeInARow
-  //if the game is over, plug winner into keepScore
-  if (threeInARow(player)) {
-    keepScore(winner);
-    console.log('YOU WIN!');
-  }
-  else if (isThereADraw()) {
-    keepScore(winner);
-    console.log('TIE GAME!');
-  }
-  else {
-    switchPlayer();
-  }
+  console.log('currentPlayer is ' + currentPlayer);
+  return currentPlayer;
 }
 
 //alternate which player begins, starting with 'X'
@@ -122,8 +108,6 @@ var selectFirstPlayer = function() {
   console.log(firstPlayer + ' begins');
   return firstPlayer;
 }
-
-// selectFirstPlayer();
 
 //if button 'play again' is pressed, clears board
 var clearBoard = function() {
