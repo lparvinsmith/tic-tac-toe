@@ -9,9 +9,8 @@ HTML/CSS & Bootstrap for layout and style
 
 
 APPROACH:
-Planned app layout and functionality using wireframe and user stories, and used HTML and CSS for basic layout.
-Constructed game logic in game.js, using JavaScript to determine orders and outcomes. Then created ui.js to handle DOM manipulation and event handling, with game.js feeding into it.
-Re-positioned and re-styled with Bootstrap, for more responsive layout.
+This app updates a classic game, tic-tac-toe, to increase competition between two opponents. The rules of the game follow the same simple norms of the classic version, with a new element of the winner of the previous game getting to go first in the next game. There is also scoreboard to track wins.
+The layout and design is meant to be simple and non-distracting, so the players can focus on the game.
 
 
 UNSOLVED PROBLEMS?
