@@ -4,17 +4,14 @@ first WDI project
 
 TECHNOLOGIES USED:
 JavaScript for game logic
-JQuery for user interaction
-HTML/CSS for layout and style
+JQuery and for user interaction
+HTML/CSS & Bootstrap for layout and style
 
 APPROACH:
 
 
 UNSOLVED PROBLEMS?
-need to make sure game stops after someone wins
-make sure first player switches
 use with browserify
-bootstrap
 store on server so others can play
 
 Fun stuff:
@@ -26,5 +23,6 @@ LINKS TO:
 
 Wireframe:
 
+
 User story:
-user-stories.txt
+https://github.com/lparvinsmith/tic-tac-toe/blob/master/user-stories.txt
