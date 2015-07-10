@@ -58,6 +58,11 @@
   top: 60px;
   clear: both;
 }
+footer {
+  background-color: rgba(189, 73, 50, 1);
+  text-align: right;
+  padding-right: 20px;
+}
 
 /* Pulse Grow from https://github.com/IanLunn/Hover/*/
 @-webkit-keyframes hvr-pulse-grow {
