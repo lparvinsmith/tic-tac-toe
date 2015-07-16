@@ -80,7 +80,7 @@ $(function(){
   var gameWatcher;
 
   //  var sa = '//localhost:3000';
-  var sa = 'https://young-citadel-2431.herokuapp.com';
+  var sa = 'http://ttt.wdibos.com';
 
   $('#register').on('click', function(e){
     $.ajax(sa + '/register', {
