@@ -70,6 +70,9 @@ $(document).ready(function(){
     $("#xWins").text(0);
     $("#oWins").text(0);
     $("#draws").text(0);
+    playerXScore = 0;
+    playerOScore = 0;
+    draw = 0;
   })
 });
 
