@@ -79,22 +79,6 @@ $(document).ready(function(){
 /////////////////////////////////////////////
 //FUN STUFF
 
-//COLORS
-//play again button -- new colors
-// $(".play-again").click(function() {
-//   // assign each color value a random number 0-255
-//   var red = Math.floor(Math.random() * 255);
-//   var green = Math.floor(Math.random() * 255);
-//   var blue = Math.floor(Math.random() * 255);
-
-//   // generate RGBA value from variables
-//   var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
-
-//   //change body's background to randomRGBA
-//   $(".playerX").css("color", randomRGBA);
-// )}
-//do again for .playerO and for $(.box).css("border", "solid " + randomRGBA + " 2px");
-
 //IF WIN 3
 
 //IF WIN 5
